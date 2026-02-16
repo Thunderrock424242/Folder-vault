@@ -19,7 +19,6 @@ import time
 import random
 import zipfile
 import hashlib
-import msvcrt
 import json
 import shutil
 from pathlib import Path
@@ -28,6 +27,10 @@ from cryptography.fernet import Fernet
 from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 import base64
+
+# Windows-only import for password input
+if os.name == 'nt':
+    import msvcrt
 
 
 class Colors:
@@ -97,14 +100,14 @@ def check_for_updates():
     """Check if a newer version is available on GitHub"""
     try:
         import urllib.request
-        import json
+        import json as json_module
         
         # GitHub API endpoint for latest release
-        api_url = "https://github.com/Thunderrock424242/Folder-vault/releases"
+        api_url = "https://api.github.com/repos/Thunderrock424242/Folder-vault/releases/latest"
         
         # Set a timeout to avoid hanging
         with urllib.request.urlopen(api_url, timeout=3) as response:
-            data = json.loads(response.read().decode())
+            data = json_module.loads(response.read().decode())
             latest_version = data.get('tag_name', '').lstrip('v')
             
             if latest_version and latest_version > __version__:
@@ -112,7 +115,7 @@ def check_for_updates():
                 print(f"{Colors.YELLOW}║  🆕 Update Available!                                     ║{Colors.END}")
                 print(f"{Colors.YELLOW}║  Current version: {__version__:<10}                            ║{Colors.END}")
                 print(f"{Colors.YELLOW}║  Latest version:  {latest_version:<10}                            ║{Colors.END}")
-                print(f"{Colors.YELLOW}║  Download: github.com/yourusername/folder-vault/releases  ║{Colors.END}")
+                print(f"{Colors.YELLOW}║  Download: github.com/Thunderrock424242/Folder-vault      ║{Colors.END}")
                 print(f"{Colors.YELLOW}╚═══════════════════════════════════════════════════════════╝{Colors.END}\n")
                 time.sleep(2)
     except:
@@ -126,6 +129,7 @@ def format_bytes(bytes_size):
         if bytes_size < 1024.0:
             return f"{bytes_size:.2f} {unit}"
         bytes_size /= 1024.0
+    return f"{bytes_size:.2f} PB"  # Fallback for extremely large files
 
 
 def get_folder_size(folder_path):
