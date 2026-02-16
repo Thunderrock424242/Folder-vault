@@ -103,6 +103,7 @@ We use [Semantic Versioning](https://semver.org/):
 - [ ] File integrity verification
 - [ ] Cloud backup integration
 - [ ] face id reconigtion (windows only)
+- [ ] file encryption option 
 
 ### v1.2.0 (Planned)
 - [ ] Multi-user shared encryption
