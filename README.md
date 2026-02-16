@@ -1,4 +1,4 @@
-# 🔐 Folder Vault Ultimate
+# 🔐 Folder Vault
 
 <div align="center">
 
@@ -8,7 +8,7 @@
 
 **Professional-grade folder encryption tool with military-level security and a beautiful terminal interface**
 
-[Features](#-features) • [Installation](#-installation) • [Usage](#-usage) • [Security](#-security) • [Screenshots](#-screenshots)
+[Features](#-features) • [Installation](#-installation) • [Usage](#-usage) • [Security](#-security)
 
 </div>
 
@@ -16,7 +16,7 @@
 
 ## 📋 Overview
 
-Folder Vault Ultimate is a powerful, user-friendly encryption tool that secures your folders with **AES-256 encryption**. It features a beautiful terminal interface with real-time progress tracking, password strength analysis, batch operations, and much more!
+Folder Vault is a powerful, user-friendly encryption tool that secures your folders with **AES-256 encryption**. It features a beautiful terminal interface with real-time progress tracking, password strength analysis, batch operations, and much more!
 
 ### Why Folder Vault?
 
@@ -89,34 +89,61 @@ Folder Vault Ultimate is a powerful, user-friendly encryption tool that secures 
 - Python 3.7 or higher
 - pip (Python package manager)
 
-### Step 1: Clone the Repository
+### Step 1: Download
 
-```bash
-git clone https://github.com/yourusername/folder-vault-ultimate.git
-cd folder-vault-ultimate
-```
+1. Go to the [Releases](https://github.com/Thunderrock424242/Folder-vault/releases) page
+2. Download the latest release (e.g., `folder-vault-v1.0.zip`)
+3. Extract the ZIP file to any location on your computer
 
 ### Step 2: Install Dependencies
 
+Open a terminal/command prompt in the extracted folder and run:
+
+**Windows (Command Prompt or PowerShell):**
 ```bash
 pip install -r requirements.txt
 ```
 
-The only dependency is:
-- `cryptography` - For encryption operations
-
-### Step 3: Make Executable (Optional)
-
-**On Windows:**
+**Linux/macOS:**
 ```bash
-# The script is ready to use
-python folder_vault_ultimate.py
+pip3 install -r requirements.txt
 ```
 
-**On Linux/macOS:**
+### Step 3: Run the Program
+
+**Windows:**
 ```bash
-chmod +x folder_vault_ultimate.py
-./folder_vault_ultimate.py
+python folder_vault.py
+```
+
+**Linux/macOS:**
+```bash
+python3 folder_vault.py
+```
+
+That's it! You're ready to start encrypting! 🎉
+
+---
+
+### Optional: Add to PATH (Advanced)
+
+To run Folder Vault from anywhere on your system:
+
+**Windows:**
+1. Copy the folder to `C:\Program Files\FolderVault\`
+2. Add to PATH environment variable
+3. Run from anywhere with `python folder_vault.py`
+
+**Linux/macOS:**
+```bash
+# Make executable
+chmod +x folder_vault.py
+
+# Move to bin (optional)
+sudo cp folder_vault.py /usr/local/bin/folder-vault
+
+# Run from anywhere
+folder-vault
 ```
 
 ---
@@ -127,7 +154,7 @@ chmod +x folder_vault_ultimate.py
 
 Run the script:
 ```bash
-python folder_vault_ultimate.py
+python folder_vault.py
 ```
 
 You'll see a menu with these options:
@@ -138,7 +165,8 @@ You'll see a menu with these options:
 3. 📦 Batch Encrypt Multiple Folders
 4. 📂 Batch Decrypt Multiple Files
 5. 👁️  View Encrypted File Contents
-6. ❌ Exit
+6. ℹ️  About / Version Info
+7. ❌ Exit
 ```
 
 ### Encrypting a Folder
@@ -222,13 +250,13 @@ Folder Vault uses **industry-standard encryption**:
 
 ---
 
-## 📸 Screenshots
+## 📸 What You'll See
 
 ### Main Menu
 ```
 ╔═══════════════════════════════════════════════════════════╗
 ║                                                           ║
-║         🔐  F O L D E R   V A U L T   U L T I M A T E    ║
+║            🔐  F O L D E R   V A U L T                   ║
 ║                                                           ║
 ║        Advanced Encryption & Decryption System            ║
 ║                  [FULL FEATURED]                          ║
@@ -264,11 +292,14 @@ Strength: VERY STRONG ███████████████████�
 
 ## 📁 File Structure
 
+After downloading and extracting the release:
+
 ```
-folder-vault-ultimate/
-├── folder_vault_ultimate.py    # Main application
+folder-vault/
+├── folder_vault.py              # Main application
 ├── requirements.txt             # Python dependencies
 ├── README.md                    # This file
+├── CHANGELOG.md                 # Version history
 └── LICENSE                      # MIT License
 ```
 
@@ -364,6 +395,36 @@ After expiration, the file cannot be decrypted and will be deleted.
 
 ---
 
+## 🔄 Version System
+
+Folder Vault uses [Semantic Versioning](https://semver.org/):
+- **MAJOR.MINOR.PATCH** (e.g., 1.0.0)
+- Current version is always shown in the banner
+
+### Check Your Version
+
+**In the app:**
+- Select option `6` from the main menu for full version info
+
+**From command line:**
+```bash
+python folder_vault.py --version
+```
+
+### Update Checker
+
+Folder Vault automatically checks for updates when you start the program. If a new version is available, you'll see a notification with a download link.
+
+### Backwards Compatibility
+
+Files encrypted with any version of Folder Vault v1.x will remain compatible with all future v1.x versions. We maintain backwards compatibility for decryption.
+
+### Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for a detailed history of changes in each version.
+
+---
+
 ## 🛠️ Troubleshooting
 
 ### Issue: "ModuleNotFoundError: No module named 'cryptography'"
@@ -417,7 +478,7 @@ This project is licensed under the MIT License - see below for details:
 ```
 MIT License
 
-Copyright (c) 2024
+Copyright (c) 2026
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -461,8 +522,9 @@ This software is provided "as is" without warranty. While it uses industry-stand
 
 ## 📞 Support
 
-- **Issues:** [GitHub Issues](https://github.com/yourusername/folder-vault-ultimate/issues)
-- **Discussions:** [GitHub Discussions](https://github.com/yourusername/folder-vault-ultimate/discussions)
+- **Issues:** [GitHub Issues](https://github.com/Thunderrock424242/Folder-vault/issues)
+- **Discussions:** [GitHub Discussions](https://github.com/Thunderrock424242/Folder-vault/issues)
+- **Releases:** [Download Latest Version](https://github.com/Thunderrock424242/Folder-vault/releases)
 
 ---
 
@@ -472,6 +534,6 @@ This software is provided "as is" without warranty. While it uses industry-stand
 
 ⭐ Star this repo if you find it useful!
 
-[Report Bug](https://github.com/yourusername/folder-vault-ultimate/issues) • [Request Feature](https://github.com/yourusername/folder-vault-ultimate/issues)
+[Download Latest Release](https://github.com/yourusername/folder-vault/releases) • [Report Bug](https://github.com/Thunderrock424242/Folder-vault/issues) • [Request Feature](https://github.com/Thunderrock424242/Folder-vault/issues)
 
 </div>
