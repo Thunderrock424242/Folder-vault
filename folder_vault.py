@@ -3,13 +3,13 @@
 Folder Vault - Secure Folder Encryption/Decryption Tool
 Full-featured encryption suite with all the bells and whistles!
 
-Author: Your Name
-Version: 1.0.0
+Author: Thunderrock424242
+Version: 1.0.1
 License: MIT
 Repository: https://github.com/Thunderrock424242/Folder-vault
 """
 
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 __author__ = "Thunderrock424242"
 __license__ = "MIT"
 

@@ -15,6 +15,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.0.1] - 2026-02-17
+
+### hotfix
+
+#### fixed
+- fixed compat issues with diffrent os systems
+
+---
+
+## Version History
+
 ## [1.0.0] - 2026-02-16
 
 ### Initial Release 🎉
@@ -76,10 +87,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Windows (full support with sound effects)
 - Linux (full support)
 - macOS (full support)
-
----
-
-## Version History
 
 ### Versioning Scheme
 We use [Semantic Versioning](https://semver.org/):
